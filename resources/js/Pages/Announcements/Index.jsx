@@ -3,7 +3,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import Announcement from '@/Components/Announcement';
 import InputError from '@/Components/InputError';
 import PrimaryButton from '@/Components/PrimaryButton';
-import { useForm, Head } from '@inertiajs/react';
+import { useForm, Head, Link } from '@inertiajs/react';
  
 export default function Index({ auth, announcements }) {
     const { data, setData, post, processing, reset, errors } = useForm({
@@ -32,10 +32,28 @@ export default function Index({ auth, announcements }) {
                 </form>
 
                 <div className="mt-6 bg-white shadow-sm rounded-lg divide-y">
-                    {announcements.map(announcement =>
+                    {announcements.data.map(announcement =>
                         <Announcement key={announcement.id} announcement={announcement} />
                     )}
                 </div>
+            </div>
+
+            <div className="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8 flex text-center">
+                <Link
+                    disabled={announcements.prev_page_url}
+                    href={announcements.prev_page_url}
+                    className="grow rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                >
+                    Previous Page
+                </Link>
+                
+                <Link
+                    disabled={announcements.next_page_url}
+                    href={announcements.next_page_url}
+                    className="grow rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                >
+                    Next Page
+                </Link>
             </div>
         </AuthenticatedLayout>
     );
