@@ -16,7 +16,7 @@ class AnnouncementController extends Controller
     public function index(): Response
     {
         return Inertia::render('Announcements/Index', [
-            //
+            'announcements' => Announcement::with('user:id,name')->latest()->get()
         ]);
     }
 
