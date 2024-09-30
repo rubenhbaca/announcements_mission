@@ -30,3 +30,4 @@ Start Laravel using the following command.
 ```
 > php artisan serve
 ```
+With your web browser you can view http://localhost:8000
