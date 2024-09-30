@@ -11,7 +11,7 @@
 Please have the following installed on your system.
 1. PHP
 1. Composer
-1. git
+1. Git
 
 ## Setup
 Install all required packages using composer using the following command.
@@ -26,8 +26,16 @@ Install required packages using NPM using the following command.
 ```
 
 ## Starting the project
+### Backend
 Start Laravel using the following command.
 ```
 > php artisan serve
 ```
 With your web browser you can view http://localhost:8000
+
+### Frontend
+Start React frontend using the following command. This allows front-end instant hot-module.
+```
+> npm run dev
+```
+
