@@ -39,3 +39,7 @@ Start React frontend using the following command. This allows front-end instant 
 > npm run dev
 ```
 
+## Getting Started
+1. You can create an account by registering (This will give you access to the platform).
+
+1. After registering you can log into the platform and review the announcements.
