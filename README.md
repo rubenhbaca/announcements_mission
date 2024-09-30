@@ -15,6 +15,11 @@ Please have the following installed on your system.
 1. Git v2.29.2
 
 ## Setup
+Make a local enviornment variable file
+```
+> cp .env.example .env
+```
+
 Install all required packages using composer using the following command.
 
 ```
@@ -26,19 +31,19 @@ Install required packages using NPM using the following command.
 > npm install
 ```
 
-Update the local database by running the migration with the following command.
-```
-> php artisan migrate
-```
-
-Make a local enviornment variable file
-```
-> cp .env.example .env
-```
-
 Generate a local environment key with the following command
 ```
 > php artisan key:generate
+```
+
+Build front-end
+```
+> npm run build
+```
+
+Update the local database by running the migration with the following command.
+```
+> php artisan migrate
 ```
 
 ## Starting the project
@@ -49,7 +54,7 @@ Start Laravel using the following command.
 ```
 With your web browser you can view http://localhost:8000
 
-### Frontend
+### Frontend (not required, for dev only)
 Start React frontend using the following command. This allows front-end instant hot-module.
 ```
 > npm run dev
@@ -58,4 +63,4 @@ Start React frontend using the following command. This allows front-end instant 
 ## Getting Started
 1. You can create an account by registering (This will give you access to the platform).
 
-1. After registering you can log into the platform and review the announcements.
+1. After registering you can log into the platform and review the announcements by clicking announcements on the main menu.
