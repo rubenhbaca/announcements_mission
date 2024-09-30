@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -27,5 +28,18 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+/**
+ * routes
+ * index - to show the list of announcements
+ * store - to save new announcements
+ * 
+ * middleware
+ * auth - ensures that only logged-in users can access the route
+ * verified - in case we enable email verification etc...
+ */
+Route::resource('announcements', AnnouncementController::class)
+    ->only(['index', 'store'])
+    ->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';
