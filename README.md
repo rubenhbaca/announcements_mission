@@ -9,9 +9,10 @@
 
 ## OS Requirements
 Please have the following installed on your system.
-1. PHP
-1. Composer
-1. Git
+1. PHP v8.2.15
+1. Composer v2.7.2
+1. Node.js v18.19.1
+1. Git v2.29.2
 
 ## Setup
 Install all required packages using composer using the following command.
@@ -30,6 +31,15 @@ Update the local database by running the migration with the following command.
 > php artisan migrate
 ```
 
+Make a local enviornment variable file
+```
+> cp .env.example .env
+```
+
+Generate a local environment key with the following command
+```
+> php artisan key:generate
+```
 
 ## Starting the project
 ### Backend
