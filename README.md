@@ -25,6 +25,12 @@ Install required packages using NPM using the following command.
 > npm install
 ```
 
+Update the local database by running the migration with the following command.
+```
+> php artisan migrate
+```
+
+
 ## Starting the project
 ### Backend
 Start Laravel using the following command.
