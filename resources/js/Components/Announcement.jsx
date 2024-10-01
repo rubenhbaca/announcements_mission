@@ -15,7 +15,7 @@ export default function Announcement({ announcement }) {
                         <small className="ml-2 text-sm text-gray-600">{new Date(announcement.created_at).toLocaleString()}</small>
                     </div>
                 </div>
-                <p className="mt-4 text-lg text-gray-900 text-wrap text-pretty break-all"><Markdown remarkPlugins={[remarkGfm]}>{announcement.message}</Markdown></p>
+                <p className="mt-4 text-lg text-gray-900 text-wrap text-pretty break-all markdown"><Markdown remarkPlugins={[remarkGfm]}>{announcement.message}</Markdown></p>
             </div>
         </div>
     );
