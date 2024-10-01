@@ -38,23 +38,31 @@ export default function Index({ auth, announcements }) {
                 </div>
             </div>
 
-            <div className="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8 flex text-center">
-                <Link
-                    disabled={announcements.prev_page_url}
-                    href={announcements.prev_page_url}
-                    className="grow rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                >
-                    Previous Page
-                </Link>
+            {announcements.data.length > 0 && <div className="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8 flex">
+                <div className='text-center grow'>
+                    {announcements.prev_page_url && <Link
+                        disabled={announcements.prev_page_url}
+                        href={announcements.prev_page_url}
+                        className="grow rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    >
+                        Previous Page
+                    </Link>}
+                </div>
+
+                <div className='text-center grow'>
+                    page {announcements.current_page} of {announcements.last_page}
+                </div>
                 
-                <Link
-                    disabled={announcements.next_page_url}
-                    href={announcements.next_page_url}
-                    className="grow rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                >
-                    Next Page
-                </Link>
-            </div>
+                <div className='text-center grow'>
+                    {announcements.next_page_url && <Link
+                        disabled={announcements.next_page_url}
+                        href={announcements.next_page_url}
+                        className="grow rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    >
+                        Next Page
+                    </Link>}
+                </div>
+            </div>}
         </AuthenticatedLayout>
     );
 }
